@@ -1,0 +1,70 @@
+table {
+
+	tbody td {
+		text-align: right;
+		
+		&[data-type=currency] {
+			text-align: right;
+		}
+		
+		&[data-title]:before {
+			content: attr(data-title);
+			float: left;
+			font-size: .8em;
+			color: rgba(94, 93, 82, 0.75);
+			
+			@media (min-width: 48em) {
+				content: none;
+			}
+		}
+	
+		@media (min-width: 48em) {
+			text-align: center;
+		}
+	}
+
+	td, th, tr {
+		display: block;
+	}
+
+	td {
+		display: block;
+	
+		@media (min-width: 48em) {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+	
+	th {
+		display: block;
+
+		@media (min-width: 48em) {
+			display: table-cell;
+		}
+	}
+	
+	/*for hiding column headers*/
+	thead {
+		position: absolute;
+		padding: 0;
+		border: 0;
+		height: 0;
+		width: 0;
+		overflow: hidden;
+		
+		@media (min-width: 48em) {
+			position: relative;
+			height: auto;
+			width: auto;
+			overflow: auto;
+		}
+	}
+	
+	tr {
+		display: block;
+		@media (min-width: 48em) {
+			display: table-row;
+		}
+	}
+}
